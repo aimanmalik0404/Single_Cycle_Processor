@@ -1,0 +1,13 @@
+gcd:
+beq x6, x7, stop
+blt x6, x7, less
+sub x6, x6, x7
+j gcd
+less:
+sub x7, x7, x6
+j gcd
+stop:
+sw x6,8(x0)
+lw x7,8(x0)
+end:
+j end
